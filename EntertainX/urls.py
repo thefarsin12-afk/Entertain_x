@@ -18,11 +18,17 @@ from django.contrib import admin
 from django.urls import path,include
 
 urlpatterns = [
+    
     path('admin/', admin.site.urls),
 
+    # Movies App Path
     path('film/',include("movies.urls")),
 
+    # Songs App Path
     path('track/',include("songs.urls")),
+
+    # Reviewly App Path
+    path('review/',include('Reviewly.urls')),
 
     
 ]

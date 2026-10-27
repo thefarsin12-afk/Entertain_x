@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "movies",
     "rest_framework.authtoken",
     'songs',
+    'Reviewly',
 ]
 
 MIDDLEWARE = [
