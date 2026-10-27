@@ -6,7 +6,7 @@ POST http://127.0.0.1:8000/film/register/
 Content-Type: application/json
 
 {
-    "username":"user",
+    "username":"user1",
     "email":"user@gmail.com",
     "password":"user@123"
 }
@@ -17,7 +17,7 @@ POST http://127.0.0.1:8000/film/login/
 Content-Type: application/json
 
 {
-    "username":"user",
+    "username":"user1",
     "password":"user@123"
 }
 
@@ -38,7 +38,7 @@ Authorization: Token 68721eb818608f4f82157fd2aba097cbd67827c1
 
 # api for fetching
 ###
-GET http://127.0.0.1:8000/film/add/2/
+GET http://127.0.0.1:8000/film/add/3/
 Accept: application/json
 Authorization: Token 68721eb818608f4f82157fd2aba097cbd67827c1
 
@@ -122,3 +122,51 @@ Authorization: Token 68721eb818608f4f82157fd2aba097cbd67827c1
 
 
 # ==== Reviwly APP API ====
+
+#api for creating review
+###
+POST http://127.0.0.1:8000/review/movie/3/add/
+Content-Type: application/json
+Authorization: Token 68721eb818608f4f82157fd2aba097cbd67827c1
+
+{
+    "message":"Good Movie,Repeated Value....What a perfomance",
+
+    "ratings":7.6
+}
+
+# api for listing all reviews
+###
+GET http://127.0.0.1:8000/review/movie/all/
+Accept: application/json
+Authorization: Token 68721eb818608f4f82157fd2aba097cbd67827c1
+
+# api for retrieve reviews
+###
+GET http://127.0.0.1:8000/review/movie/all/2/
+Accept: application/json
+Authorization: Token 68721eb818608f4f82157fd2aba097cbd67827c1
+
+# api for reviews
+###
+PUT http://127.0.0.1:8000/review/movie/all/2/
+Content-Type: application/json
+Authorization: Token 68721eb818608f4f82157fd2aba097cbd67827c1
+
+{
+  "id": 2,
+  "message": "Good Movie,Repeated Value....What a perfomance",
+  "ratings": "8.1",
+  "created_at": "2026-10-27T17:15:01.341730Z",
+  "update_at": "2026-10-27T17:15:01.341792Z",
+  "movie": 3,
+  "created_by": 1
+}
+
+# api for delete reviews
+###
+DELETE http://127.0.0.1:8000/review/movie/all/2/
+Accept: application/json
+Authorization: Token 68721eb818608f4f82157fd2aba097cbd67827c1
+
+
