@@ -7,6 +7,9 @@ from movies.models import Movie
 from songs.models import Songg
 from songs.serialiserz import SongSerializer
 
+from Reviewly.models import Review
+from Reviewly.serilalizers import ReviewSerializer
+
 
 class SignUpSerilaizer(serializers.ModelSerializer):
 
@@ -22,6 +25,8 @@ class MovieSerialiserz(serializers.ModelSerializer):
     song_count = serializers.SerializerMethodField(read_only=True)
 
     song = serializers.SerializerMethodField(read_only=True)
+
+    review = serializers.SerializerMethodField(read_only=True)
 
     class Meta:
 
@@ -42,6 +47,14 @@ class MovieSerialiserz(serializers.ModelSerializer):
         serializer_instance = SongSerializer(song_object,many=True)
 
         return serializer_instance.data
+
+    def get_review(self,obj):
+
+        review_object = Review.objects.filter(movie=obj)
+
+        serializers_instance = ReviewSerializer(review_object,many=True)
+
+        return serializers_instance.data
 
     
 
