@@ -3,8 +3,10 @@ from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import authentication,permissions
+from rest_framework.generics import ListAPIView,RetrieveAPIView,UpdateAPIView,DestroyAPIView
 
 from songs.serialiserz import SongSerializer
+from songs.models import Songg
 
 from movies.models import Movie
 
@@ -31,6 +33,27 @@ class SongCreate(APIView):
             return Response(data=serializer.data)
 
         else:return Response(data=serializer.errors)
+
+class SongListView(ListAPIView):
+
+    authentication_classes = [authentication.TokenAuthentication]
+
+    permission_classes = [permissions.IsAuthenticated]
+
+    serializer_class = SongSerializer
+
+    queryset = Songg.objects.all()        
+
+
+class SongRetrieveUpdateDeleteView(RetrieveAPIView,UpdateAPIView,DestroyAPIView):
+
+    authentication_classes = [authentication.TokenAuthentication]
+
+    permission_classes = [permissions.IsAuthenticated]
+
+    serializer_class = SongSerializer
+
+    queryset = Songg.objects.all()
 
 
 
