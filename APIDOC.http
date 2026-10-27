@@ -38,7 +38,7 @@ Authorization: Token 68721eb818608f4f82157fd2aba097cbd67827c1
 
 # api for fetching
 ###
-GET http://127.0.0.1:8000/film/add/1/
+GET http://127.0.0.1:8000/film/add/2/
 Accept: application/json
 Authorization: Token 68721eb818608f4f82157fd2aba097cbd67827c1
 
@@ -74,7 +74,7 @@ Content-Type: application/json
 Authorization: Token 68721eb818608f4f82157fd2aba097cbd67827c1
 
 {
-    "title":"Kodumon Potti",
+    "title":"Karintho",
 
     "duration":"220",
 
