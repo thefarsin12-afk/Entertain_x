@@ -1,0 +1,84 @@
+# ==== Movies ====
+
+# api for creating user
+###
+POST http://127.0.0.1:8000/film/register/
+Content-Type: application/json
+
+{
+    "username":"user",
+    "email":"user@gmail.com",
+    "password":"user@123"
+}
+
+#api for genrating token
+###
+POST http://127.0.0.1:8000/film/login/
+Content-Type: application/json
+
+{
+    "username":"user",
+    "password":"user@123"
+}
+
+#api for creating movies
+###
+POST http://127.0.0.1:8000/film/add/
+Content-Type: application/json
+Authorization: Token 68721eb818608f4f82157fd2aba097cbd67827c1
+
+{
+    "title":"Bramayugam",
+
+    "year":2024,
+
+    "ratings":7.7
+
+}
+
+# api for fetching
+###
+GET http://127.0.0.1:8000/film/add/1/
+Accept: application/json
+Authorization: Token 68721eb818608f4f82157fd2aba097cbd67827c1
+
+# api for updating 
+###
+PUT http://127.0.0.1:8000/film/add/1/
+Content-Type: application/json
+Authorization: Token 68721eb818608f4f82157fd2aba097cbd67827c1
+
+{
+  "id": 1,
+  "title": "Eko",
+  "year": 2026,
+  "genres": "Action",
+  "ratings": "7.7",
+  "language": "Malayalam",
+  "created_at": "2026-10-26T17:22:09.209753Z",
+  "updated_at": "2026-10-26T17:22:09.209873Z"
+}
+
+# api for delete
+###
+DELETE http://127.0.0.1:8000/film/add/1/
+Accept: application/json
+Authorization: Token 68721eb818608f4f82157fd2aba097cbd67827c1
+
+# ==== SONGS ====
+
+#api for adding song
+###
+POST http://127.0.0.1:8000/track/song/2/play/
+Content-Type: application/json
+Authorization: Token 68721eb818608f4f82157fd2aba097cbd67827c1
+
+{
+    "title":"Kodumon Potti",
+
+    "duration":"220",
+
+    "singer":"Christo Xavier"
+
+
+}
