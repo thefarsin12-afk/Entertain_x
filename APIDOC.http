@@ -6,9 +6,9 @@ POST http://127.0.0.1:8000/film/register/
 Content-Type: application/json
 
 {
-    "username":"user1",
-    "email":"user@gmail.com",
-    "password":"user@123"
+    "username":"audience1",
+    "email":"audience@gmail.com",
+    "password":"audience1@123"
 }
 
 #api for genrating token
@@ -17,8 +17,8 @@ POST http://127.0.0.1:8000/film/login/
 Content-Type: application/json
 
 {
-    "username":"user1",
-    "password":"user@123"
+    "username":"audience1",
+    "password":"audience1@123"
 }
 
 #api for creating movies
@@ -36,9 +36,15 @@ Authorization: Token 68721eb818608f4f82157fd2aba097cbd67827c1
 
 }
 
+#api for listing movies
+###
+GET  http://127.0.0.1:8000/film/add/
+Accept:  application/json
+Authorization: Token 68721eb818608f4f82157fd2aba097cbd67827c1
+
 # api for fetching
 ###
-GET http://127.0.0.1:8000/film/add/2/
+GET http://127.0.0.1:8000/film/add/3/
 Accept: application/json
 Authorization: Token 68721eb818608f4f82157fd2aba097cbd67827c1
 
@@ -69,16 +75,16 @@ Authorization: Token 68721eb818608f4f82157fd2aba097cbd67827c1
 
 #api for adding song
 ###
-POST http://127.0.0.1:8000/track/song/2/play/
+POST http://127.0.0.1:8000/track/song/3/play/
 Content-Type: application/json
 Authorization: Token 68721eb818608f4f82157fd2aba097cbd67827c1
 
 {
-    "title":"Karintho",
+    "title":"kai lengtho",
 
     "duration":"220",
 
-    "singer":"Christo Xavier"
+    "singer":"alexa"
 
 }
 
@@ -125,9 +131,9 @@ Authorization: Token 68721eb818608f4f82157fd2aba097cbd67827c1
 
 #api for creating review
 ###
-POST http://127.0.0.1:8000/review/movie/3/add/
+POST http://127.0.0.1:8000/review/movie/2/add/
 Content-Type: application/json
-Authorization: Token 68721eb818608f4f82157fd2aba097cbd67827c1
+Authorization: Token 73c02639b31bfab2cf0909e73824019777392659
 
 {
     "message":"Good Movie,Repeated Value....What a perfomance",
@@ -143,9 +149,9 @@ Authorization: Token 68721eb818608f4f82157fd2aba097cbd67827c1
 
 # api for retrieve reviews
 ###
-GET http://127.0.0.1:8000/review/movie/all/2/
+GET http://127.0.0.1:8000/review/movie/all/5/
 Accept: application/json
-Authorization: Token 68721eb818608f4f82157fd2aba097cbd67827c1
+Authorization: Token 73c02639b31bfab2cf0909e73824019777392659
 
 # api for reviews
 ###
@@ -165,7 +171,7 @@ Authorization: Token 68721eb818608f4f82157fd2aba097cbd67827c1
 
 # api for delete reviews
 ###
-DELETE http://127.0.0.1:8000/review/movie/all/2/
+DELETE http://127.0.0.1:8000/review/movie/all/1/
 Accept: application/json
 Authorization: Token 68721eb818608f4f82157fd2aba097cbd67827c1
 

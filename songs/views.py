@@ -14,7 +14,7 @@ class SongCreate(APIView):
 
     authentication_classes = [authentication.TokenAuthentication]
 
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.IsAdminUser]
 
     def post(self,request,pk=None):
 
@@ -38,7 +38,7 @@ class SongListView(ListAPIView):
 
     authentication_classes = [authentication.TokenAuthentication]
 
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.IsAdminUser]
 
     serializer_class = SongSerializer
 

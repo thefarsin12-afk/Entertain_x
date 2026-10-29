@@ -49,7 +49,15 @@ class MoviesCreateListView(APIView):
 
             return Response(data=serializer.data)
 
-        else:return Response(data=serializer.errors)    
+        else:return Response(data=serializer.errors) 
+
+    def get(self,reuqest):
+
+        instance = Movie.objects.all()
+
+        serilaizer = MovieSerialiserz(instance,many=True)
+
+        return Response(data=serilaizer.data)
 
 class MoviesRetrieveUpdateDeleteView(RetrieveAPIView,UpdateAPIView,DestroyAPIView):
 
